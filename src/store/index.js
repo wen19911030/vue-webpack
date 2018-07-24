@@ -7,6 +7,12 @@ const store = new Vuex.Store({
   state: {
     count: 0,
     isLoading: false,
+    theme: {
+      backgroundColor: '#fff',
+      textColor: '#303133',
+      activeTextColor: '#282C34',
+      headerTheme: 'info',
+    },
   },
   mutations: {
     increment(state) {
@@ -20,6 +26,9 @@ const store = new Vuex.Store({
     },
     CLOSE_LOADING(state) {
       state.isLoading = false;
+    },
+    CHANGE_THEME(state, obj = {}) {
+      Object.assign(state.theme, obj);
     },
   },
 });

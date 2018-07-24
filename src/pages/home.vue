@@ -1,6 +1,6 @@
 <template>
 <div class="panel animated fadeInUp">
-  这是主页
+  <h1>这是主页</h1>
 </div>
 </template>
 <script>
@@ -9,8 +9,9 @@ export default {};
 
 <style type="text/css" scoped>
 .panel {
-  flex: 1;
-  margin: 15px;
-  background: #fff;
+    flex: 1;
+    margin: 15px;
+    background: #fff;
+    text-align: left;
 }
 </style>

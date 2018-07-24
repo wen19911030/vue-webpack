@@ -5,20 +5,16 @@
     'hide-side': hideSide
   }"
   >
-  <el-aside class="app-side" :width="hideSide ? '0' : sideWidth + 'px'"
-    :style="{background: theme.theme.backgroundColor}"
-    >
-    <div class="app-header-logo-box"
-      :style="{height: headerHeight + 'px', color: theme.theme.activeTextColor}"
-      >
+  <el-aside class="app-side" :style="{background: theme.backgroundColor}" :width="sideWidth">
+    <div class="app-header-logo-box" :style="{color: theme.activeTextColor}">
       <img src="../assets/logo.png" alt="" class="header-logo">
       <span class="header-logo-text" >控制台</span>
     </div>
-    <app-side :collapse="isCollapse" :theme="theme.theme"></app-side>
+    <app-side :collapse="isCollapse" :theme="theme"></app-side>
   </el-aside>
   <el-container>
-    <el-header class="app-header">
-      <app-header @switch="handleSideSwitch" @set-theme="handleSetTheme" @hide-side="handleSwitchHideSide"></app-header>
+    <el-header class="app-header" :height="headerHeight">
+      <app-header @switch="handleSideSwitch"></app-header>
     </el-header>
     <el-main class="app-body">
       <router-view></router-view>
@@ -37,10 +33,14 @@ export default {
     return {
       isCollapse: false,
       hideSide: false,
-      sideWidth: 200,
-      footerHeight: 50,
-      theme: { theme: {} },
+      sideWidth: '200px',
+      headerHeight: '50px',
     };
+  },
+  computed: {
+    theme() {
+      return this.$store.state.theme;
+    },
   },
   components: {
     appSide,
@@ -49,13 +49,7 @@ export default {
   methods: {
     handleSideSwitch(val) {
       this.isCollapse = val;
-      this.sideWidth = val ? 60 : 200;
-    },
-    handleSwitchHideSide() {
-      this.hideSide = !this.hideSide;
-    },
-    handleSetTheme(theme) {
-      this.theme = theme;
+      this.sideWidth = val ? '60px' : '200px';
     },
   },
 };
