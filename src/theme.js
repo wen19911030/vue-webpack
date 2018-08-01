@@ -7,7 +7,7 @@ export default [
       backgroundColor: '#fff',
       textColor: '#303133',
       activeTextColor: '#282C34',
-      headerTheme: 'info',
+      headerTheme: 'default',
     },
   },
   {

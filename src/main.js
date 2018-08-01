@@ -14,6 +14,8 @@ import store from './store/index';
 Vue.use(Vuex);
 Vue.use(ElementUI);
 
+console.log()
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

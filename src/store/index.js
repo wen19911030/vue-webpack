@@ -31,6 +31,20 @@ const store = new Vuex.Store({
       Object.assign(state.theme, obj);
     },
   },
+  actions: {
+    login({ commit }, user) {
+      // 模拟登陆
+      console.log(user);
+      return new Promise((resolve, reject) => {
+        user.id = 1;
+        user.nickName = '管理员';
+        sessionStorage.setItem('user', JSON.stringify(user));
+        setTimeout(() => {
+          resolve({ bool: true, user });
+        }, 2000);
+      });
+    },
+  },
 });
 
 export default store;

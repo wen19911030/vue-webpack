@@ -9,9 +9,6 @@
         <span class="el-dropdown-link">主题切换<i class="el-icon-arrow-down el-icon--right"></i></span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item v-for="(item, index) in theme" :key="index" :command="item.name">{{item.label}}</el-dropdown-item>
-          <!-- <el-dropdown-item>黄金糕</el-dropdown-item> -->
-          <!-- <el-dropdown-item>狮子头</el-dropdown-item> -->
-          <!-- <el-dropdown-item>螺蛳粉</el-dropdown-item> -->
         </el-dropdown-menu>
       </el-dropdown>
     </li>
@@ -62,6 +59,11 @@ export default {
       & + li {
         margin-left: 15px;
       }
+    }
+  }
+  .el-dropdown-link {
+    cursor: pointer;
+    &:active {
     }
   }
   .el-dropdown {

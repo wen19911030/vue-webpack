@@ -1,14 +1,19 @@
 <template>
 
-<div>
-  <el-menu
-      default-active="2"
-      class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose">
+<div class="nav-container">
+  <el-menu router default-active="/" :collapse="collapse" :background-color="theme.backgroundColor" :text-color="theme.textColor" :active-text-color="theme.activeTextColor"
+      @open="handleOpen" @close="handleClose">
       <el-menu-item index="/">
         <!-- <i class="el-icon-setting"></i> -->
         <span slot="title">主页</span>
+      </el-menu-item>
+      <el-menu-item index="/test1">
+        <!-- <i class="el-icon-setting"></i> -->
+        <span slot="title">测试页1</span>
+      </el-menu-item>
+      <el-menu-item index="/test2">
+        <!-- <i class="el-icon-setting"></i> -->
+        <span slot="title">测试页2</span>
       </el-menu-item>
     </el-menu>
 </div>
@@ -51,6 +56,12 @@ export default {
 };
 </script>
 <style type="text/css">
+.nav-container {
+  text-align: left;
+}
+.el-menu {
+  border-right: none;
+}
 .el-menu.side-menu {
   border-right: none;
 }
